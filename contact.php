@@ -36,7 +36,10 @@ if( isset($_POST['msg-submitted']) ) {
 		
 		$emailTo = 'james@jamesking56.co.uk';
 		$subject = 'New Submitted Message From: ' . $name;
-		$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
+		if($subject != "")
+			$body = "Name: $name \n\nEmail: $email \n\nSubject: $subject\r\nMessage: $message";
+		else
+			$body = "Name: $name \n\nEmail: $email \n\nMessage: $message";
 		$headers = 'From: ' .' <'.$emailTo.'>' . "\r\n" . 'Reply-To: ' . $email;
 
 		mail($emailTo, $subject, $body, $headers);
