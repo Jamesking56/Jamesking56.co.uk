@@ -1,0 +1,19 @@
+# Rewrite Rules
+Options -Indexes
+RewriteEngine On
+RewriteBase /
+
+# Force www
+#RewriteCond %{HTTP_HOST} !^$
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteCond %{HTTPS}s ^on(s)|
+#RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# Subdomain Redirects
+RedirectMatch 301 ^/blog/(.*)$ http://blog.jamesking56.co.uk/$1
+
+# PHP Settings
+SetEnv TZ Europe/London
+
+# 404 -> Home
+ErrorDocument 404 http://www.jamesking56.co.uk
