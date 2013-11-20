@@ -29,10 +29,10 @@ $years = abs(13 - $age);
     <![endif]-->
 
     <!-- Fav and touch icons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://en.gravatar.com/avatar/b066fe4a2f3abbe276fd754b378dbff7?s=144">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://en.gravatar.com/avatar/b066fe4a2f3abbe276fd754b378dbff7?s=144">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://en.gravatar.com/avatar/b066fe4a2f3abbe276fd754b378dbff7?s=72">
+    <link rel="apple-touch-icon-precomposed" href="http://en.gravatar.com/avatar/b066fe4a2f3abbe276fd754b378dbff7?s=57">
     <link rel="shortcut icon" href="http://en.gravatar.com/avatar/b066fe4a2f3abbe276fd754b378dbff7?s=20">
 
 </head>
@@ -263,5 +263,18 @@ $years = abs(13 - $age);
 	<script type="text/javascript" src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
 	<script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>	
 	<script type="text/javascript" src="assets/js/main.js"></script>
+
+	<!-- Google Analytics -->
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-3000159-32']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
 </body>
 </html>
