@@ -1,5 +1,13 @@
 <?php
 
+// Sponsored Links
+$sponsoredLinks = array(
+	'http://www.awin1.com/awclick.php?mid=897&id=203211' => 'Domain names with Free Website, Email and much more!',
+	'http://www.awin1.com/awclick.php?mid=5240&id=203211' => 'Quality Cloud Hosting and Dedicated Servers'
+
+);
+$sponsoredLinks = false;
+
 function get_age($birth_date){
 	return floor((time() - strtotime($birth_date))/31556926);
 }
@@ -246,8 +254,22 @@ $years = abs(13 - $age);
 
 		<!-- footer -->
 		<footer class="footer">
-			<p>&copy; Copyright 2013 James King, All Rights Reserved.</p>
-			<p>Proudly hosted by <a href="https://interhosty.com/secure/aff.php?aff=397">InterHosty</a>.</p>
+			<p>&copy; Copyright 2013<?php if(date("Y") > 2013){ ?> - <?php echo date("Y"); } ?> James King, All Rights Reserved.</p>
+			<?php
+			if($sponsoredLinks)
+			{
+			?>
+			<p>Proudly hosted by <a href="#">Krystal</a>.</p>
+			<?php
+				if(count($sponsoredLinks) > 0)
+				{
+					$link = $sponsoredLinks[array_rand($sponsoredLinks, 1)]['link'];
+					$text = $sponsoredLinks[array_rand($sponsoredLinks, 1)]['text'];
+
+					echo "<p>Sponsored: <a href=\"".$link."\">".$text."</a></p>";
+				}
+			}
+			?>
 		</footer>
 		<!-- end footer -->
 
@@ -261,7 +283,7 @@ $years = abs(13 - $age);
 	<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
 	<script type="text/javascript" src="assets/js/jquery.ui.map.full.min.js?ver=3.0"></script>
 	<script type="text/javascript" src="assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
-	<script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>	
-	<script type="text/javascript" src="assets/js/main.js"></script>s
+	<script type="text/javascript" src="assets/js/jquery.localscroll-1.2.7-min.js"></script>
+	<script type="text/javascript" src="assets/js/main.js"></script>
 </body>
 </html>

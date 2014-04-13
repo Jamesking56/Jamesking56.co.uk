@@ -63,6 +63,8 @@ if( isset($_POST['msg-submitted']) ) {
 	header("Content-type: application/json");
 	echo json_encode( array( 'message' => $message, 'result' => $result ));
 	die();
+} else {
+	header('Location: index.php');
 }
 
 

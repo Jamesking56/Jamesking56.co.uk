@@ -1,6 +1,5 @@
 <?php
 header('Access-Control-Allow-Origin: *');
-$accesskey = '155991816ab974d05d9aa663946a2a3d836f1647';
 
 $debug = false;
 if(isset($_GET['debug']) && $_GET['debug'] == '1')
@@ -36,7 +35,7 @@ if((!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 			CURLOPT_URL => $url,
 			CURLOPT_USERAGENT => 'Jamesking56.co.uk Hire Availability Robot',
 			CURLOPT_HEADER => array(
-				'Authorization: '.$accesskey
+				'Authorization: 155991816ab974d05d9aa663946a2a3d836f1647'
 			)
 		));
 
@@ -64,7 +63,9 @@ if((!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQ
 
 	if($github['hireable'] == true)
 	{
-		echo 'I am currently <span class="label label-success">Available</span> for hire.';
+		echo 'I am currently <span class="label 
+label-success">Available</span> for hire. Please feel free to contact 
+me below to get an hourly rate for your project.';
 	}
 	else
 	{

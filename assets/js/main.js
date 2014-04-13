@@ -16,7 +16,7 @@
 			
 			var geocoder = new google.maps.Geocoder();
 			var address = 'Redditch, UK';
-			var contentString = '<div class="map-detail"><strong>Our Office:</strong><p>' + address + '</p></div>';
+			var contentString = '<div class="map-detail"><strong>My Home:</strong><p>' + address + '</p></div>';
 			
 			geocoder.geocode({'address': address }, function(results, status) {
 				if(status == google.maps.GeocoderStatus.OK) { 
@@ -90,13 +90,20 @@
 
 		// GitHub Status
 		$.ajax({
-			url: 'github.php',
-			dataType: 'html',
-			error:function(){
-				// Do Nothing
-			},
+			url: 'http://api.jamesking56.co.uk/hireable',
+			dataType: 'json',
 			success:function(data){
-				$('#github-status').html(data);
+				if(data.success)
+				{
+					if(data.hireable)
+					{
+						$('#github-status').html('I am currently <span class="label label-success">Available</span> for hire. Please feel free to contact me below to get an hourly rate for your project.');
+					}
+					else
+					{
+						$('#github-status').html('I am currently <span class="label label-danger">Unavailable</span> for hire.');
+					}
+				}
 			}
 		});
 
